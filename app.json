@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/conceptQuery/conceptQuery",
+    "pages/softwareCompatibilityQuery/softwareCompatibilityQuery"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "查询系统",
+    "navigationBarTextStyle": "black"
+  }
+}

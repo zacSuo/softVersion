@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="input-section">
+    <input class="input-box" type="text" placeholder="输入概念名称" bindinput="onConceptNameChange" />
+    <button class="search-button" bindtap="searchConcept">查询</button>
+  </view>
+  <view class="result-section" wx:if="{{conceptInfo}}">
+    <view class="result-header">{{conceptInfo.name}}</view>
+    <view class="result-item">
+      <view class="result-title">概述:</view>
+      <view class="result-content">{{conceptInfo.overview}}</view>
+    </view>
+    <view class="result-item">
+      <view class="result-title">原理:</view>
+      <view class="result-content">{{conceptInfo.principle}}</view>
+    </view>
+    <view class="result-item">
+      <view class="result-title">应用:</view>
+      <view class="result-content">{{conceptInfo.application}}</view>
+    </view>
+    <view class="result-item">
+      <view class="result-title">其他信息:</view>
+      <view class="result-content">{{conceptInfo.otherInfo}}</view>
+    </view>
+  </view>
+</view>

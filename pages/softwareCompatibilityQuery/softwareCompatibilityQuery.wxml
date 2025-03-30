@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="input-section">
+    <input class="input-box" type="text" placeholder="输入软件名称" bindinput="onSoftwareNameChange" />
+    <input class="input-box" type="text" placeholder="输入软件版本" bindinput="onSoftwareVersionChange" />
+    <button class="search-button" bindtap="searchCompatibility">查询</button>
+  </view>
+  <view class="result-section">
+    <view class="result-header">查询结果</view>
+    <view wx:if="{{errorMessage}}">
+      <view class="error-message">{{errorMessage}}</view>
+    </view>
+    <view wx:if="{{compatibilityInfo}}">
+      <view class="result-header">兼容的软件:</view>
+      <view class="result-item" wx:for="{{compatibilityInfo}}" wx:key="index">
+        <text>{{item}}</text>
+      </view>
+    </view>
+  </view>
+</view>
