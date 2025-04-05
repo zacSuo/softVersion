@@ -1,0 +1,215 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  min-height: 300vh; /* 确保容器占满整个视口高度 */
+  box-sizing: border-box; /* 包括内边距和边框在高度计算中 */
+}
+
+.section {
+  margin-bottom: 20px;
+  text-align: left; /* 确保内容左对齐 */
+}
+
+.section-header {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.results-concpet-list {
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.input-box {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.search-button {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.search-button:hover {
+  background-color: #005bb5;
+}
+
+.picker-box {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  appearance: none; /* 隐藏默认下拉箭头 */
+  font-size: 14px; /* 设置字体大小 */
+  color: #333; /* 设置字体颜色 */
+  cursor: pointer; /* 鼠标悬停时显示为指针 */
+}
+
+.picker-box:focus {
+  outline: none; /* 移除聚焦时的默认样式 */
+  border-color: #007aff; /* 聚焦时的边框颜色 */
+}
+
+.picker-placeholder {
+  color: #888;
+}
+
+.separator {
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+}
+
+.selected-software {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 新增样式 */
+.tab-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  background-color: #f1f1f1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.tab-bar-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.tab-bar-text {
+  color: #666;
+}
+
+.tab-bar-text-active {
+  color: #007aff;
+  font-weight: bold;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.result-section {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.result-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  word-wrap: break-word; /* 确保长单词换行 */
+  line-height: 1.6; /* 增加行高，提升可读性 */
+}
+
+.result-content {
+  line-height: 1.8; /* 增加行高，优化阅读体验 */
+  word-wrap: break-word; /* 确保内容换行 */
+  margin-bottom: 10px; /* 增加段落间距 */
+}
+
+.result-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.result-item {
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.concept-name {
+  white-space: normal;
+  overflow: visible; /* 确保内容不会被截断 */
+  text-indent: 0; /* 移除可能的首行缩进 */
+}
+
+.swiper-view {
+  height: calc(100vh - 50px); /* 视口高度减去底部按钮的高度 */
+  box-sizing: border-box; /* 确保内边距和边框包含在高度计算中 */
+  text-align: left; /* 确保内容左对齐 */
+}
+
+.concept-info p {
+  display: block; /* 确保每段单独一行显示 */
+  margin-bottom: 10px; /* 每段之间增加间距 */
+  line-height: 1.8; /* 提升可读性 */
+  word-wrap: break-word; /* 确保长单词换行 */
+  white-space: normal; /* 确保内容正常换行 */
+}
+
+.concept-info p.title {
+  font-weight: bold; /* 加粗标题 */
+  margin-bottom: 15px; /* 增加标题与内容之间的间距 */
+}
+
+.concept-info-header {
+  font-size: 20px; /* 设置标题字体大小 */
+  font-weight: bold; /* 加粗标题 */
+  margin-bottom: 10px; /* 增加标题与分隔符之间的间距 */
+}
+
+.concept-info-separator {
+  height: 2px; /* 设置分隔符高度 */
+  background-color: #007aff; /* 设置分隔符颜色 */
+  margin-bottom: 15px; /* 增加分隔符与内容之间的间距 */
+}
+
+.official-account {
+  display: flex;
+  justify-content: center;
+  margin: 20rpx;
+}
+
+.official-account-button {
+  position: fixed;
+  bottom: 60px; /* 距离底部的距离，确保在标签上方 */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f9f9f9; /* 背景色与页面一致 */
+  z-index: 1000; /* 确保按钮在其他元素上方 */
+}

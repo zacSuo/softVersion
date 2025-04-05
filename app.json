@@ -1,13 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/conceptQuery/conceptQuery",
-    "pages/softwareCompatibilityQuery/softwareCompatibilityQuery"
+    "pages/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "查询系统",
+    "navigationBarTitleText": "具身智能软件查询小工具",
     "navigationBarTextStyle": "black"
   }
 }

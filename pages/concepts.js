@@ -1,12 +1,5 @@
 const concepts = [
   {
-    name: "test",
-    overview: "测试概念的描述",
-    principle: "测试概念的原理",
-    application: "测试概念的应用",
-    otherInfo: "测试概念的其他信息"
-  },
-  {
     name: "人工智能",
     overview: "人工智能是一种模拟、延伸和扩展人的智能的理论、方法、技术及应用系统。",
     principle: "基于机器学习、深度学习等算法。",

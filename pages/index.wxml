@@ -1,0 +1,73 @@
+<view class="container">
+  <swiper current="{{currentTab}}" bindchange="switchTab" class="swiper-view">
+    <swiper-item>
+      <view class="section">
+        <view class="section-header">概念查询</view>
+        <input class="input-box" type="text" placeholder="输入概念名称" bindblur="onBlur" bindinput="onConceptNameChange" value="{{conceptName}}" />
+        <view wx:if="{{results.length > 0}}" class="results-concpet-list">
+          <view wx:for="{{results}}" wx:key="name" class="result-item" bindtap="selectConcept" data-name="{{item.name}}">
+            <p><strong>名称:</strong> {{item.name}}</p>
+          </view>
+        </view>
+        <view wx:if="{{conceptInfo}}" class="concept-info"> 
+          <view class="concept-info-separator"></view> <!-- 增加分隔符 -->
+          <p><strong  class="concept-info-header title" >概述:</strong> {{conceptInfo.overview}}</p>
+          <p><strong  class="concept-info-header title">原理:</strong> {{conceptInfo.principle}}</p>
+          <p><strong  class="concept-info-header title">应用:</strong> {{conceptInfo.application}}</p>
+          <p><strong  class="concept-info-header title">其他信息:</strong> {{conceptInfo.otherInfo}}</p>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="input-section">
+        <view class="picker-box">
+          <picker mode="selector" range="{{softwareList}}" range-key="name" bindchange="onPickerChange">
+            <view>{{selectedSoftware || "请选择软件"}}</view> <!-- 显示选中的软件名称 -->
+          </picker>
+        </view>
+        <view class="picker-box">
+          <picker mode="selector" range="{{versionList}}" bindchange="onVersionPickerChange">
+            <view>{{selectedVersion || "请选择版本"}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="concept-info-separator"></view> <!-- 增加分隔符 -->
+      <view class="result-section">
+        <view wx:if="{{errorMessage}}">
+          <view class="error-message">{{errorMessage}}</view>
+        </view>
+        <view wx:if="{{compatibilityInfo}}">
+          <view class="result-header">安装指令:</view>
+          <view class="result-item">
+            <text>{{installcode}}</text>
+          </view>
+          <view class="result-header">兼容的软件:</view>
+          <view class="result-item" wx:for="{{compatibilityInfo}}" wx:key="index">
+            <text>{{item}}</text>
+          </view>
+        </view>
+      </view>      
+    </swiper-item>
+    <swiper-item>
+      <view class="section">
+        <view class="section-header">查看π后面第n位数字</view>
+        <input class="input-box" type="number" placeholder="输入1到7400之间的数字" bindinput="onPiDigitIndexChange" />
+        <button class="search-button" bindtap="searchPiDigit">查询</button>
+        <view wx:if="{{piDigitResult}}">
+          <h3>π的第{{piDigitIndex}}位数字是: {{piDigitResult}}</h3>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="tab-bar">
+    <view class="tab-bar-item" data-index="0" bindtap="switchTab">
+      <text class="{{currentTab === 0 ? 'tab-bar-text-active' : 'tab-bar-text'}}">概念查询</text>
+    </view>
+    <view class="tab-bar-item" data-index="1" bindtap="switchTab">
+      <text class="{{currentTab === 1 ? 'tab-bar-text-active' : 'tab-bar-text'}}">软件兼容</text>
+    </view>
+    <view class="tab-bar-item" data-index="2" bindtap="switchTab">
+      <text class="{{currentTab === 2 ? 'tab-bar-text-active' : 'tab-bar-text'}}">π查询</text>
+    </view>
+  </view>
+</view>
